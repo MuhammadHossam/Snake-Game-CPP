@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/main.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/main.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/main.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/game.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/game.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/game.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/game.cpp.o"
+},
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/controller.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/controller.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/controller.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/controller.cpp.o"
+},
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/renderer.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/renderer.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/renderer.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
+},
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/snake.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/snake.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/snake.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/snake.cpp.o"
+},
+{
+  "directory": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/build",
+  "command": "/usr/bin/c++  -I/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2 -g -std=gnu++17   -std=c++17 -pthread -o CMakeFiles/SnakeGame.dir/src/ScoreHandler.cpp.o -c /home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/ScoreHandler.cpp",
+  "file": "/home/muhammad/CPP_Course/CapstoneProject/CppND-Capstone-Snake-Game/src/ScoreHandler.cpp",
+  "output": "CMakeFiles/SnakeGame.dir/src/ScoreHandler.cpp.o"
+}
+]

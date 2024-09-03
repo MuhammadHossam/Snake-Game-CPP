@@ -1,0 +1,39 @@
+In this file, we will describe the snake game design in details: 
+
+We will start with describing the Game loop design pattern which we will use in the project. 
+
+The Game loop consists of three main parts:
+1- Input code which handles the input request from the user.
+2- Update code which updates the game according to the input user but in the backend of the game (Internal state of the game like positions of characters, speed of the game, etc...).
+3- Render code which renders the backend of the game and move it to the front end (takes the game state and renders it to the screen according to fixed rules).
+
+
+The Application consists of 4 classes:
+1- Game class.	
+2- Controller class.
+3- Snake class.
+4- Renderer class.
+
+At the main thread:
+1. It creates following parameters to define the system design:
+	a) kFramesPerSecond: Define the system speed to maintain it across different devices.
+	b) kScreenWidth/kScreenHeight: Define the game resolution.
+	c) kGridWidth/kGridHeight: Define the unit dimension of the game which is the grid. 
+2. It creates a renderer object with a constructor passing the screen and grid dimensions for initialization.
+3. It creates a controller with no arguments for it's constructor.
+4. It creates a game (stores the game state and runs the game loop) initializing it with only the grid dimensions, also has a private instance from Snake class to update it's state and run the game loop on it.
+5. It calls the Game::Run() method passing the controller, renderer, and frame rate to start the game.
+
+
+Game Class:
+
+1. This class contains a Snake instance, food, and random uniform distribution for the food point using the seed. 
+2. The Game constructor creates a snake constructor passing the initial position (width/height) and passing initial values for the food point then place a food at the initial value.
+
+
+
+Create async thread at the main to show entry screen for user to enter the name and game mode, communicate with the game through 
+
+
+Create a poison using when a snake touches it, a thread will be created and snake move will be halted for time when time is over, snake will continue move (it will be done by a message between main thread and the created thread) 
+when snake is halted the game is continue normally but snake update is halted.
