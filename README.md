@@ -32,6 +32,14 @@ In this project, you can build your own C++ application or extend this Snake gam
 4. Run it: `./SnakeGame`.
 
 
+## Game New Features
+1- Multiplier game with two snakes (Note that this is done by two child threads that run asynchronously) one is controlled by (Right, left, up, and down buttons) and the second controller is controlled by (d, a, w, and s).  (Note that buttons can be configured easily in the game constructor). TO BE CONFIGURED FROM CONFIGURATION TEXT FILE SOON.....
+2- Poison food is added to freeze the snake for 3 seconds to give the privilege to the second player to win more points.
+3- Shrinking food is added to decrement the snake size and also the player score till the snake dies if size becomes zero.
+4- The highest score is restored from a text file in the project folder and after the game is finalized, if the winner score is higher than the highest score, then the file will be updated with new score. (Note that this done by abstraction methodology through new classes with APIs)
+5- The two players will lose if the two snakes hit each other. 
+
+
 ## CC Attribution-ShareAlike 4.0 International
 
 
