@@ -39,7 +39,8 @@ In this project, you can build your own C++ application or extend this Snake gam
 4- The highest score is restored from a text file in the project folder and after the game is finalized, if the winner score is higher than the highest score, then the file will be updated with new score. (Note that this done by abstraction methodology through new classes with APIs)
 5- The two players will lose if the two snakes hit each other. 
 
-
+## The New Game Play
+![The new game play](Snake_game_New.png)
 ## CC Attribution-ShareAlike 4.0 International
 
 
