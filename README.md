@@ -50,7 +50,7 @@ In order to have a successful submission, we are supposed to address at least 5 
 | Category/Rubric                                              | Explanation and link(s)                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Loops, Functions, I/O**<br />The project demonstrates an understanding of C++ functions and control structures. | The project is well organized demonstrating a deep understanding of C++ functions and control structure by decompose the functionalities to small functions to ease the testing and decrease the complexity |
-
+| **Loops, Functions, I/O**<br />The project reads data from file and process the data, or the program writes data to a file. | The code is structured from 5 classes one of them called [ScoreHandler](https://github.com/MuhammadHossam/Snake-Game-CPP/blob/main/src/ScoreHandler.h), which read the score.txt file and update the latest highest score, then check the new score of the winner after the game is finished and save it in the file in case it is higher than the stored highest score.|
 ## CC Attribution-ShareAlike 4.0 International
 
 
