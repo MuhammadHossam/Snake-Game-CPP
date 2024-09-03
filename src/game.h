@@ -17,7 +17,7 @@ class Game {
   Game(std::size_t grid_width, std::size_t grid_height);
   ~Game();
   void Run(Renderer renderer,
-           std::size_t target_frame_duration);
+           std::size_t target_frame_duration,int &gamemode);
   int GetPlayer1Score() const;
   int GetPlayer2Score() const;
   int GetSize() const;
@@ -34,6 +34,7 @@ class Game {
   std::vector <std::thread> controllerthreads;
   bool _running;
   std::mutex pausemtx;
+  int _gamemode{0};
 
   std::random_device dev;
   std::mt19937 engine;

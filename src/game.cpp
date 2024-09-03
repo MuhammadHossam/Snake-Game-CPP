@@ -24,7 +24,7 @@ Game::~Game(){
     });
 }
 void Game::Run( Renderer renderer,
-               std::size_t target_frame_duration) {
+               std::size_t target_frame_duration, int &gamemode) {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
   Uint32 frame_end;
@@ -33,16 +33,21 @@ void Game::Run( Renderer renderer,
   Controller player1(SDLK_UP,SDLK_DOWN,SDLK_RIGHT,SDLK_LEFT,1);
   Controller player2(SDLK_w,SDLK_s,SDLK_d,SDLK_a,2);
   controllerthreads.emplace_back(std::thread(&Controller::HandleInput,player1,std::ref(_running),std::ref(*snake.get()),
-  std::ref(this->pausemtx),std::ref(*this)));
-  controllerthreads.emplace_back(std::thread(&Controller::HandleInput,player2,std::ref(_running),std::ref(*snake1.get()),
-  std::ref(this->pausemtx), std::ref(*this)));
+    std::ref(this->pausemtx),std::ref(*this)));
+  _gamemode = gamemode;
+  if(gamemode == 2)
+  {
+    controllerthreads.emplace_back(std::thread(&Controller::HandleInput,player2,std::ref(_running),std::ref(*snake1.get()),
+       std::ref(this->pausemtx), std::ref(*this)));
+  }
+  
   while (_running) {
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
     //std::cout<<"Hello Main Task"<<std::endl;
     frame_start = SDL_GetTicks();    
     // Input, Update, Render - the main game loop.
     Update(renderer);
-    renderer.Render(*snake.get(),*snake1.get(),food, poison, shrinkfood);
+    renderer.Render(*snake.get(),*snake1.get(),food, poison, shrinkfood,_gamemode);
     frame_end = SDL_GetTicks();
     // Keep track of how long each loop through the input/update/render cycle
     // takes.
@@ -51,7 +56,7 @@ void Game::Run( Renderer renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(Player1score,Player2score, frame_count);
+      renderer.UpdateWindowTitle(Player1score,Player2score, frame_count, _gamemode);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -133,8 +138,11 @@ void Game::Update(Renderer& renderer) {
   if(snake->poisoned == false)
     snake->Update();
   //snake.Update();
-  if(snake1->poisoned == false)
-    snake1->Update();
+  if(snake1->poisoned == false && (_gamemode == 2))
+  {
+     snake1->Update();
+  }
+   
   
   if((SDL_GetTicks() - posionupdate) > 5000)
   {
@@ -149,9 +157,9 @@ void Game::Update(Renderer& renderer) {
   
   int new_x = static_cast<int>(snake->head_x);
   int new_y = static_cast<int>(snake->head_y);
-
   int new1_x = static_cast<int>(snake1->head_x);
   int new1_y = static_cast<int>(snake1->head_y);
+
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
     Player1score++;
@@ -173,7 +181,7 @@ void Game::Update(Renderer& renderer) {
     snake->ShrinkBody();
     PlaceShrinkFood();
   }
-  else if(food.x == new1_x && food.y == new1_y)
+  else if(food.x == new1_x && food.y == new1_y && (_gamemode == 2))
   {
     Player2score++;
     PlaceFood();
@@ -181,7 +189,7 @@ void Game::Update(Renderer& renderer) {
     snake1->GrowBody();
     snake1->speed += 0.02;
   }
-  else if(poison.x == new1_x && poison.y == new1_y)
+  else if(poison.x == new1_x && poison.y == new1_y && (_gamemode == 2))
   {
    // std::thread poisonthread(&Game::PoisonEffect, this);
      snake1->poisoned = true;
@@ -189,14 +197,14 @@ void Game::Update(Renderer& renderer) {
    // poisonthread.join();
     PlacePoison();
   }
-  else if(shrinkfood.x == new1_x && shrinkfood.y == new1_y)
+  else if(shrinkfood.x == new1_x && shrinkfood.y == new1_y && (_gamemode == 2))
   {
 //should be shrinking.
     Player2score--;
     snake1->ShrinkBody();
     PlaceShrinkFood();
   }
-  else if(new1_x == new_x && new1_y == new_y)
+  else if(new1_x == new_x && new1_y == new_y && (_gamemode == 2))
   {
     snake->alive = false;
     snake1->alive = false;

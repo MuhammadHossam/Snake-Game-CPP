@@ -14,8 +14,8 @@ class Renderer {
   Renderer &operator=(const Renderer &source);
   Renderer(Renderer &&source);
   Renderer &operator=(Renderer &&source);
-  void Render(Snake const &snake, Snake const &snake1, SDL_Point const &food, SDL_Point const &poison, SDL_Point const &shrinkfood);
-  void UpdateWindowTitle(int score,int score2, int fps);
+  void Render(Snake const &snake, Snake const &snake1, SDL_Point const &food, SDL_Point const &poison, SDL_Point const &shrinkfood, int game);
+  void UpdateWindowTitle(int score,int score2, int fps,int gamemode);
   void UpdatePauseMessage(void); 
  private:
   SDL_Window *sdl_window;
