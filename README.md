@@ -2,7 +2,8 @@
 
 This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
-<img src="snake_game.gif"/>
+![Old Game Play](snake_game.gif)
+
 
 The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
 
@@ -31,6 +32,25 @@ In this project, you can build your own C++ application or extend this Snake gam
 4. Run it: `./SnakeGame`.
 
 
+## Game New Features
+1. Multiplier game with two snakes (Note that this is done by two child threads that run asynchronously) one is controlled by (Right, left, up, and down buttons) and the second controller is controlled by (d, a, w, and s).  (Note that buttons can be configured easily in the game constructor). TO BE CONFIGURED FROM CONFIGURATION TEXT FILE SOON.....
+2. Poison food is added to freeze the snake for 3 seconds to give the privilege to the second player to win more points.
+3. Shrinking food is added to decrement the snake size and also the player score till the snake dies if size becomes zero.
+4. The highest score is restored from a text file in the project folder and after the game is finalized, if the winner score is higher than the highest score, then the file will be updated with new score. (Note that this done by abstraction methodology through new classes with APIs)
+5. The two players will lose if the two snakes hit each other. 
+6. Game can be paused by escape button.
+
+## The New Game Play
+![The new game play](Snake_game_New.png)
+
+## Project Rubrics Discussed
+
+In order to have a successful submission, we are supposed to address at least 5 optional rubrics given in the capstone project. 
+
+| Category/Rubric                                              | Explanation and link(s)                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Loops, Functions, I/O**<br />The project demonstrates an understanding of C++ functions and control structures. | The project is well organized demonstrating a deep understanding of C++ functions and control structure by decompose the functionalities to small functions to ease the testing and decrease the complexity |
+| **Loops, Functions, I/O**<br />The project reads data from file and process the data, or the program writes data to a file. | The code is structured from 5 classes one of them called [ScoreHandler](https://github.com/MuhammadHossam/Snake-Game-CPP/blob/main/src/ScoreHandler.h), which read the score.txt file and update the latest highest score, then check the new score of the winner after the game is finished and save it in the file in case it is higher than the stored highest score.|
 ## CC Attribution-ShareAlike 4.0 International
 
 
