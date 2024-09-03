@@ -42,6 +42,15 @@ In this project, you can build your own C++ application or extend this Snake gam
 
 ## The New Game Play
 ![The new game play](Snake_game_New.png)
+
+## Project Rubrics Discussed
+
+In order to have a successful submission, we are supposed to address at least 5 optional rubrics given in the capstone project. 
+
+| Category/Rubric                                              | Explanation and link(s)                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Loops, Functions, I/O**<br />The project demonstrates an understanding of C++ functions and control structures. | The project is well organized demonstrating a deep understanding of C++ functions and control structure by decompose the functionalities to small functions to ease the testing and decrease the complexity |
+
 ## CC Attribution-ShareAlike 4.0 International
 
 
